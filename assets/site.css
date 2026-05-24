@@ -1,0 +1,342 @@
+:root {
+  color-scheme: dark;
+  --bg: #08080d;
+  --panel: rgba(13, 15, 24, 0.82);
+  --panel-strong: rgba(7, 8, 12, 0.94);
+  --text: #fff8eb;
+  --muted: rgba(255, 248, 235, 0.74);
+  --cyan: #0ceadf;
+  --pink: #ff2b86;
+  --yellow: #ffd22b;
+  --orange: #ff8a18;
+  --line: rgba(255, 255, 255, 0.16);
+  --shadow: rgba(0, 0, 0, 0.42);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255, 43, 134, 0.22), transparent 30%),
+    radial-gradient(circle at 80% 4%, rgba(12, 234, 223, 0.18), transparent 28%),
+    linear-gradient(135deg, #120817 0%, #07131d 42%, #09090f 100%);
+  color: var(--text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+.page {
+  overflow: hidden;
+}
+
+.site-header {
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 14px clamp(18px, 5vw, 72px);
+  background: rgba(5, 6, 12, 0.72);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(18px);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.brand img {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  box-shadow: 0 10px 26px var(--shadow);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.92rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.nav a {
+  padding: 8px 12px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.nav a:hover,
+.nav a:focus-visible {
+  color: var(--text);
+  border-color: rgba(255, 255, 255, 0.24);
+  outline: none;
+}
+
+.hero {
+  position: relative;
+  min-height: 92vh;
+  display: grid;
+  align-items: end;
+  padding: 120px clamp(20px, 5vw, 82px) 52px;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(90deg, rgba(4, 5, 10, 0.80) 0%, rgba(4, 5, 10, 0.42) 42%, rgba(4, 5, 10, 0.16) 70%),
+    linear-gradient(0deg, rgba(4, 5, 10, 0.92) 0%, transparent 34%),
+    url("title-screen-flying-skate.png");
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.012);
+}
+
+.hero-content {
+  position: relative;
+  max-width: 760px;
+  text-shadow: 0 12px 28px rgba(0, 0, 0, 0.58);
+}
+
+.eyebrow {
+  display: inline-flex;
+  margin: 0 0 16px;
+  color: var(--cyan);
+  font-size: 0.88rem;
+  font-weight: 950;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  line-height: 0.98;
+}
+
+h1 {
+  max-width: 680px;
+  color: #fff;
+  font-size: clamp(4rem, 11vw, 9rem);
+  font-weight: 1000;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  -webkit-text-stroke: 2px #08080d;
+  filter: drop-shadow(8px 9px 0 rgba(255, 43, 134, 0.86)) drop-shadow(13px 14px 0 rgba(12, 234, 223, 0.58));
+}
+
+.hero-copy {
+  max-width: 620px;
+  margin: 28px 0 0;
+  color: rgba(255, 248, 235, 0.88);
+  font-size: clamp(1.06rem, 1.8vw, 1.28rem);
+  font-weight: 650;
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 13px 18px;
+  border: 3px solid #050507;
+  border-radius: 10px;
+  box-shadow: 6px 7px 0 #050507, 0 18px 38px rgba(0, 0, 0, 0.30);
+  font-weight: 950;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.button.primary {
+  background: linear-gradient(180deg, var(--yellow), var(--orange));
+  color: #09090d;
+}
+
+.button.secondary {
+  background: linear-gradient(180deg, #20e8d2, #0db7a9);
+  color: #050507;
+}
+
+.button.ghost {
+  background: rgba(255, 255, 255, 0.09);
+  color: var(--text);
+  box-shadow: 5px 6px 0 #050507;
+}
+
+.section {
+  padding: 72px clamp(20px, 5vw, 82px);
+}
+
+.section-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  font-size: clamp(2.2rem, 5.2vw, 4.4rem);
+  text-transform: uppercase;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 30px;
+}
+
+.feature,
+.doc-card,
+.markdown-body {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.30);
+}
+
+.feature,
+.doc-card {
+  padding: 24px;
+}
+
+.feature h3,
+.doc-card h3 {
+  color: var(--yellow);
+  font-size: 1.2rem;
+  line-height: 1.18;
+  text-transform: uppercase;
+}
+
+.feature p,
+.doc-card p {
+  margin: 12px 0 0;
+  color: var(--muted);
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.poster {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.36);
+}
+
+.policy-hero {
+  padding-top: 132px;
+}
+
+.markdown-body {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: clamp(24px, 5vw, 54px);
+  color: rgba(255, 248, 235, 0.9);
+}
+
+.markdown-body h1 {
+  margin-bottom: 22px;
+  font-size: clamp(2.6rem, 7vw, 5.6rem);
+}
+
+.markdown-body h2 {
+  margin-top: 36px;
+  color: var(--yellow);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.markdown-body h3 {
+  margin-top: 28px;
+  color: var(--cyan);
+  font-size: 1.16rem;
+}
+
+.markdown-body p,
+.markdown-body li {
+  color: rgba(255, 248, 235, 0.82);
+}
+
+.markdown-body code {
+  color: var(--cyan);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.site-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 28px clamp(20px, 5vw, 82px);
+  color: rgba(255, 248, 235, 0.68);
+  border-top: 1px solid var(--line);
+  background: rgba(4, 5, 10, 0.8);
+}
+
+.site-footer a {
+  color: var(--text);
+}
+
+@media (max-width: 860px) {
+  .site-header {
+    position: sticky;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .hero {
+    min-height: 82vh;
+    padding-top: 62px;
+  }
+
+  .grid,
+  .split {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: clamp(3.2rem, 18vw, 6rem);
+  }
+}
